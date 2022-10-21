@@ -4,7 +4,10 @@ import axios from "axios";
 import {Simulate} from "react-dom/test-utils";
 import error = Simulate.error;
 
-function AddToDo() {
+type AddToDoProps = {
+    callBack: () => void
+}
+function AddToDo(props: AddToDoProps) {
 
     //input feld
     //axios post = useEffect wenn todo sich ändert
@@ -13,15 +16,24 @@ function AddToDo() {
 
 
     const [todo, setToDo] = useState<TodoModel>()
-    useEffect(() => {
+
+/*    useEffect(() => {
         axios.post("/api/todo", todo)
             .then(e => console.log(e.status))
             .catch((error) => console.log(error))
-    }, [todo])
+            .then(props.callBack)
 
-    const addToDo = (description:string) => {
-        let toDoNew : TodoModel ={description:description,status:"OPEN", id:"5"}
-        setToDo(toDoNew);
+    }, [todo])*/
+
+/*    const addToDo = (description:string) => {
+        let toDoNew : TodoModel ={description:description,status:"OPEN"}
+        setToDo(toDoNew);*/
+
+    const addToDo = (text: string) => {
+        axios.post("/api/todo", {description: text, status: "OPEN"})
+            .catch((error) => console.log("posterror " + error))
+            .then(props.callBack)
+            .catch((error) => console.log("geterror " + error))
 
     }
 

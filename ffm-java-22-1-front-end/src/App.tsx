@@ -10,20 +10,28 @@ function App() {
 
     const [todoList, setTodoList] = useState<TodoModel[]>([])
 
-    useEffect(() => {axios.get("/api/todo")
-        .then((response) => {
-            return response.data})
-        .catch((error) => console.log("Endpoint not available "+error))
-        .then((data) => setTodoList(data))
-        },[todoList])
+    useEffect(() => {
+        getTodoList()
+    }, [])
+
+
+    const getTodoList = () => {
+        axios.get("/api/todo")
+            .then((response) => {
+                return response.data
+            })
+            .catch((error) => console.log("Endpoint not available " + error))
+            .then((data) => setTodoList(data))
+    }
 
     return (
+
         <div className="App">
             <Header/>
-        <TodoGallery todoList={todoList}/>
-            <AddToDo/>
-    </div>
-  );
+            <TodoGallery todoList={todoList}/>
+            <AddToDo callBack={getTodoList}/>
+        </div>
+    );
 }
 
 export default App;
