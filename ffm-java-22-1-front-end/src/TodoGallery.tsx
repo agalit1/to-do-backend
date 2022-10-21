@@ -14,6 +14,6 @@ function TodoGallery(props: GalleryProps) {
                 <ToDoCard singleToDo={current} key={current.id}/>
             )}
         </div>
-    );}
-
+    );
+}
     export default TodoGallery;
