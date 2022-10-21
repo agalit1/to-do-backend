@@ -11,7 +11,9 @@ import java.util.Map;
 class TodoRepository {
 
     private final Map<String, Todo> todos = new HashMap<>(Map.of(
-            "1", new Todo("1" ,"Test", TodoStatus.OPEN)
+            "1", new Todo("1" ,"Test", TodoStatus.OPEN),
+            "2", new Todo("2" ,"Test2", TodoStatus.IN_PROGRESS),
+            "3", new Todo("3" ,"Test3", TodoStatus.DONE)
     ));
 
     public List<Todo> getAll() {
