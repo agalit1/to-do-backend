@@ -4,6 +4,7 @@ import Header from "./Header";
 import axios from "axios";
 import {TodoModel} from "./Model/TodoModel";
 import TodoGallery from "./TodoGallery";
+import AddToDo from "./AddToDo";
 
 function App() {
 
@@ -14,12 +15,13 @@ function App() {
             return response.data})
         .catch((error) => console.log("Endpoint not available "+error))
         .then((data) => setTodoList(data))
-        },[])
+        },[todoList])
 
     return (
         <div className="App">
             <Header/>
         <TodoGallery todoList={todoList}/>
+            <AddToDo/>
     </div>
   );
 }
