@@ -1,0 +1,22 @@
+article {
+    font-family: Georgia;
+    color: black;
+    text-shadow: 3px 3px white;
+    border: solid 2px black;
+    border-radius: 2pc;
+    box-shadow: 4px 4px lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    width: 300px;
+    height: auto;
+    opacity: 0.5;
+}
+
+.description {
+    opacity: 1.0;
+}
+
+

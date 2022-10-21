@@ -1,13 +1,13 @@
 import React from 'react';
 import {TodoModel} from "./Model/TodoModel";
+import "./Css/Task.css";
 
 function ToDoCard(props: {singleToDo:TodoModel}) {
     return (
         <article>
-        <div>{props.singleToDo.description}</div>
-        <div>{props.singleToDo.status}</div>
-        <div>{props.singleToDo.id}</div>
-
+        <div className="description">{props.singleToDo.description}</div>
+        <div className="status">{props.singleToDo.status}</div>
+        <div className="id">{props.singleToDo.id}</div>
         </article>
     );
 }

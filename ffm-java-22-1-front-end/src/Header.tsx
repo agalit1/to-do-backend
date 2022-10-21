@@ -1,12 +1,13 @@
 import React from 'react';
+import "./Css/Header.css"
 
 function Header() {
     return (
-        <header>
-            <h1>
+        <div>
+            <h1 className="header">
                 Kanban board
             </h1>
-        </header>
+        </div>
     );
 }
 export default Header;
