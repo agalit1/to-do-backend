@@ -28,8 +28,8 @@ function App() {
 
         <div className="App">
             <Header/>
-            <TodoGallery todoList={todoList}/>
-            <AddToDo callBack={getTodoList}/>
+            <TodoGallery todoList={todoList} refreshPage={getTodoList}/>
+            <AddToDo refreshPage={getTodoList}/>
         </div>
     );
 }

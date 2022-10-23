@@ -1,22 +1,30 @@
-article {
+.todo-card {
     font-family: Georgia;
     color: black;
     text-shadow: 3px 3px white;
     border: solid 2px black;
-    border-radius: 2pc;
+    border-radius: 1pc;
     box-shadow: 4px 4px lightgray;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin: 20px;
     width: 300px;
     height: auto;
     opacity: 0.5;
 }
-
-.description {
+.todo-card:hover {
     opacity: 1.0;
 }
+.todo-card p{
+    margin: 0;
+}
 
+.button-row {
+    display: flex;
+    justify-content: space-around;
+}
+
+button.delete {
+    background-color: orangered;
+}
 
