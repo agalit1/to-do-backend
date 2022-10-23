@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import './Css/App.css';
+import './css/App.css';
 import Header from "./Header";
 import axios from "axios";
-import {TodoModel} from "./Model/TodoModel";
+import {TodoModel} from "./model/TodoModel";
 import TodoGallery from "./TodoGallery";
 import AddToDo from "./AddToDo";
 
@@ -28,8 +28,9 @@ function App() {
 
         <div className="App">
             <Header/>
-            <TodoGallery todoList={todoList} refreshPage={getTodoList}/>
             <AddToDo refreshPage={getTodoList}/>
+            <TodoGallery todoList={todoList} refreshPage={getTodoList}/>
+
         </div>
     );
 }

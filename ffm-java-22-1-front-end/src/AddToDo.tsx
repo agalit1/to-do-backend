@@ -8,11 +8,15 @@ type AddToDoProps = {
 function AddToDo(props: AddToDoProps) {
 
     const addToDo = (text: string) => {
-        axios.post("/api/todo", {description: text, status: "OPEN"})
-            .catch((error) => console.log("posterror " + error))
-            .then(props.refreshPage)// calls getTodoList() from App.tsx
-            .catch((error) => console.log("geterror " + error))
-
+        if(text.trim()) {
+            axios.post("/api/todo", {description: text, status: "OPEN"})
+                .catch((error) => console.log("posterror " + error))
+                .then(props.refreshPage)// calls getTodoList() from App.tsx
+                .catch((error) => console.log("geterror " + error))
+        }
+        else {
+            alert("Please specify the title of the new todo.")
+        }
     }
 
     const[text, setText] = useState("")
@@ -21,10 +25,12 @@ function AddToDo(props: AddToDoProps) {
     }
 
     return (
-        <div>
+        <div className={"input-area"}>
+            <form>
             <input type='text'
                    onChange={ onTextChange} value={text}/>
                 <button onClick = {()=> addToDo(text)}>Add ToDo</button>
+            </form>
         </div>
 
     );

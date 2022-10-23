@@ -1,6 +1,6 @@
 import React from 'react';
-import {TodoModel} from "./Model/TodoModel";
-import "./Css/ToDo.css";
+import {TodoModel} from "./model/TodoModel";
+import "./css/ToDoCard.css";
 import axios from "axios";
 
 type ToDoCardProps = {
@@ -43,10 +43,21 @@ function ToDoCard(props: ToDoCardProps) {
 
     return (
         <div className={"todo-card"}>
-        <h3 className="description">{props.singleToDo.description}</h3>
-        <p className="status">{props.singleToDo.status}</p>
-        <p className="id">{props.singleToDo.id}</p>
-        <div className={"button-row"}>
+        <div className={"todo-info"}>
+            <div className={"todo-section"}>
+                <p>Description</p>
+                <p className="info-description">{props.singleToDo.description}</p>
+            </div>
+            <div className={"todo-section"}>
+                <p>Status</p>
+                <p className="todo-status">{props.singleToDo.status}</p>
+            </div>
+            <div className={"todo-section"}>
+                <p>Identifier</p>
+                <p className="todo-id">{props.singleToDo.id}</p>
+            </div>
+        </div>
+            <div className={"button-row"}>
             <button>Details</button>
             <button>Edit</button>
             <button className={advanceButtonClass} onClick={() => {

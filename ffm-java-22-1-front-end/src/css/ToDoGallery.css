@@ -1,6 +1,7 @@
 .todo-gallery {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 1em;
 }
 
 .todo-gallery-column {
@@ -8,4 +9,11 @@
     flex-flow: column wrap;
     align-items: center;
     border: 1px solid black;
+}
+.todo-gallery-column-title {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    min-width: 75%;
+    align-items: center;
 }

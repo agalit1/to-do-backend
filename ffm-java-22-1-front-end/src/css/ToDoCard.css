@@ -1,0 +1,51 @@
+.todo-card p{
+    margin: 0;
+}
+@keyframes opacity-decrease {
+    from {opacity: 1.0;}
+    to {opacity: 0.5;}
+}
+@keyframes opacity-increase {
+    from {opacity: 0.5;}
+    to {opacity: 1.0;}
+}
+.todo-card:hover {
+     animation-name: opacity-increase;
+     animation-duration: 0.5s;
+     opacity: 1;
+}
+.todo-card {
+    font-family: Georgia;
+    color: black;
+    text-shadow: 3px 3px white;
+    border: solid 2px black;
+    border-radius: 0.5pc;
+    box-shadow: 4px 4px #898989;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 2em;
+    width: 300px;
+    height: auto;
+    animation-name: opacity-decrease;
+    animation-duration: 0.5s;
+    opacity: 0.5;
+}
+.button-row {
+    display: flex;
+    justify-content: space-around;
+}
+button.delete {
+    background-color: orangered;
+}
+.todo-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+    margin: 1em;
+    border-bottom: 1px solid black;
+    padding: 0.5em;
+}
+.todo-section :first-child {
+    font-weight: bold;
+}
